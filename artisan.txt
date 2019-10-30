@@ -1,0 +1,11 @@
+composer require laravel/ui --dev
+php artisan ui vue --auth
+php artisan migrate
+php artisan migrate:rollback
+php artisan make:migration create_rezults_table
+
+git version 2.23.0.windows.1
+
+C:\Users\Учитель>git config --global user.name "Aleks"
+
+C:\Users\Учитель>git config --global user.email pam-70@mail.ru
