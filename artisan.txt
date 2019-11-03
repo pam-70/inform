@@ -9,3 +9,12 @@ git version 2.23.0.windows.1
 C:\Users\Учитель>git config --global user.name "Aleks"
 
 C:\Users\Учитель>git config --global user.email pam-70@mail.ru
+
+C:\laragon\www\2910laravel>git init
+git ststus
+git add .
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/pam-70/inform.git
+git push -u origin master

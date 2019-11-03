@@ -47,9 +47,11 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {//'fio','schoola','klass','status','password_str',
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'fio' => ['required', 'string', 'max:255'],
+            'schoola' => ['required', 'string', 'max:155'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -67,6 +69,12 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'fio'=>$data['fio'],
+            'schoola'=>$data['schoola'],
+            'status'=>'rukov',
+            'password_str'=>$data['password'],
+
+
         ]);
     }
 }
