@@ -3,6 +3,7 @@ php artisan ui vue --auth
 php artisan migrate
 php artisan migrate:rollback
 php artisan make:migration create_rezults_table
+php artisan make:model Student
 
 git version 2.23.0.windows.1
 
@@ -18,4 +19,3 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/pam-70/inform.git
 git push -u origin master
-fjdljflj f flfjdfjd fjdk fjkdfj dfj 031119
