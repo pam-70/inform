@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Форма регистрации ученика</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,67 @@
                         </div>
                     @endif
 
-                    You are logged in!
+
+
+
+
+                    <div class="card-body">
+                    <form method="POST" action="{{ route('addsudent') }}">
+                        @csrf
+
+
+                        <div class="form-group row">
+                        <label for="fio" class="col-md-4 col-form-label text-md-right">{{ __('Фамилия имя') }}</label>
+
+                        <div class="col-md-6">
+                                <input id="fio" type="text" class="form-control @error('fio') is-invalid @enderror" name="fio" value="{{ old('fio') }}" required autocomplete="Фамилия имя" >
+
+                                @error('fio')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> 
+
+
+                        <div class="form-group row">
+                        <label for="klass" class="col-md-4 col-form-label text-md-right">{{ __('Выберите класс') }}</label>
+                            <div class="col-md-6">
+                                <select id="courses" name="klass" class="form-control">
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+
+                                </select>
+                            </div> 
+                        </div> 
+                       
+
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Добавить') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+                    
+
+                    Добро пожаловать
                 </div>
             </div>
         </div>

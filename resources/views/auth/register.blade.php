@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Логин') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder ="Придумайте имя" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                         <label for="fio" class="col-md-4 col-form-label text-md-right">{{ __('Фамилия имя') }}</label>
 
                         <div class="col-md-6">
-                                <input id="fio" type="text" class="form-control @error('fio') is-invalid @enderror" name="fio" value="{{ old('fio') }}" required autocomplete="Фамилия имя" >
+                                <input id="fio" type="text" class="form-control @error('fio') is-invalid @enderror" name="fio" value="{{ old('fio') }}" required autocomplete="Фамилия имя" placeholder ="Ваше фамилия и имя" >
 
                                 @error('fio')
                                     <span class="invalid-feedback" role="alert">
@@ -44,7 +44,7 @@
 
 
                         <div class="col-md-6">
-                                <input id="schoola" type="text" class="form-control @error('schoola') is-invalid @enderror" name="schoola" value="{{ old('schoola') }}" required autocomplete="Школа" >
+                                <input id="schoola" type="text" class="form-control @error('schoola') is-invalid @enderror" name="schoola" value="{{ old('schoola') }}" required autocomplete="Школа" placeholder ="Пример МАОУ СШ № 444">
 
                                 @error('schoola')
                                     <span class="invalid-feedback" role="alert">
@@ -53,13 +53,26 @@
                                 @enderror
                             </div>
                         </div>  
+                        <div class="form-group row">
+                        <label for="schoola" class="col-md-4 col-form-label text-md-right">{{ __('Выберите предмет') }}</label>
+                            <div class="col-md-6">
+                                <select id="courses" name="theme" class="form-control">
+                                    <option value="inform">Информатика</option>
 
+                                </select>
+                            </div> 
+                        </div> 
 
+                        
+                        
+                        
+                        
+                        
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail адрес') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

@@ -18,4 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/addsudent',['as'=>'addsudent','uses'=>'AddstudentController@addstudent'])->middleware('auth');
+Route::get('/addsudent',['as'=>'addsudent','uses'=>'AddstudentController@hom'])->middleware('auth');
 

@@ -25,6 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
+   // echo('9999');
     protected $redirectTo = '/home';
 
     /**

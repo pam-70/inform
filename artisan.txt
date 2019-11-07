@@ -5,6 +5,10 @@ php artisan migrate:rollback
 php artisan make:migration create_rezults_table
 php artisan make:model Student
 
+
+
+ php artisan make:controller AddstudentController --resource
+
 git version 2.23.0.windows.1
 
 C:\Users\Учитель>git config --global user.name "Aleks"

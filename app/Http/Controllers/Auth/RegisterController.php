@@ -52,7 +52,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'fio' => ['required', 'string', 'max:255'],
             'schoola' => ['required', 'string', 'max:155'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -72,9 +72,13 @@ class RegisterController extends Controller
             'fio'=>$data['fio'],
             'schoola'=>$data['schoola'],
             'status'=>'rukov',
+            'theme'=>$data['theme'],            
             'password_str'=>$data['password'],
 
 
         ]);
     }
+
+
+    
 }
