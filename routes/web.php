@@ -20,4 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/addsudent',['as'=>'addsudent','uses'=>'AddstudentController@addstudent'])->middleware('auth');
 Route::get('/addsudent',['as'=>'addsudent','uses'=>'AddstudentController@hom'])->middleware('auth');
+//execute
+Route::get('/execute',['as'=>'execute','uses'=>'ExecuteController@execute'])->middleware('auth');
+
+
+Route::get('pdf44','ExecuteController@generatePDF');
+
+
 

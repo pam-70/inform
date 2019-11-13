@@ -9,6 +9,25 @@ php artisan make:model Student
 
  php artisan make:controller AddstudentController --resource
 
+
+**********************************************************************************************
+также библотека wkhtmltopdf
+MPDF
+composer require barryvdh/laravel-dompdf
+config/app.php
+
+'providers' => [
+	....
+	Barryvdh\DomPDF\ServiceProvider::class,
+],
+  
+'aliases' => [
+	....
+	'PDF' => Barryvdh\DomPDF\Facade::class,
+]
+*************************************************************************************************************
+
+
 git version 2.23.0.windows.1
 
 C:\Users\Учитель>git config --global user.name "Aleks"

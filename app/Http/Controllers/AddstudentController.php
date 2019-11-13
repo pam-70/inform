@@ -64,7 +64,7 @@ function rand9(){
         'password' => Hash::make($rn['passw']),
         'fio'=>$request->fio,
         'rukov_id'=>Auth::user()->id,
-        'schoola'=>'пробная',
+        'schoola'=>Auth::user()->schoola,
         'email' =>$rn['log'] ,
         'theme'=>Auth::user()->theme,
         'status'=>'student',
@@ -113,10 +113,20 @@ function rand9(){
     }
     public function hom()
     {
-        $zapros=User::where('rukov_id',Auth::user()->id)
-        ->orderBy('klass')
-       ->get();
-        dd($zapros);
+        if(Auth::user()->status=='rokov'){
+            $zapros=User::where('rukov_id',Auth::user()->id)
+            ->orderBy('fio')
+            ->get();
+        
+            return view('home')->with(['zapr' => $zapros]);
+        }
+        if(Auth::user()->status=='student'){
+        
+            return view('student');
+        }
+
+
+
     }
     /**
      * Display a listing of the resource.

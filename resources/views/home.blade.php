@@ -13,6 +13,54 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if (isset($zapr))
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">%</th>
+                            <th scope="col">Класс</th>
+                            <th scope="col">Фамилия имя</th>
+                            <th scope="col">Логин</th>
+                            <th scope="col">Пароль</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+
+                   
+                        @foreach ($zapr as $user)
+                        <tr>
+                            <th scope="row">{{$user->rezult}}</th>
+                            <td>{{$user->klass}}</td>
+                            <td>{{$user->fio}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->password_str}}</td>
+                        </tr>
+
+
+                             
+                        @endforeach
+                        </tbody>
+                        </table>
+
+                    <div class="card-body">
+                    <form method="POST" action='#'>
+
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-0">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Распечатать список') }}
+                                </button>
+                        </div>
+                        </form>
+                    </div>
+
+
+
+                    @endif
+
 
 
 

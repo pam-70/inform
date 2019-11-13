@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use PDF;
 class HomeController extends Controller
 {
+
+
+
+
+
     /**
      * Create a new controller instance.
      *
@@ -24,11 +30,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $zapros=User::where('rukov_id',Auth::user()->id)
-        ->orderBy('klass')
-       ->get();
-        dd($zapros);
-        return view('home');
+        if(Auth::user()->status=='rokov'){
+            $zapros=User::where('rukov_id',Auth::user()->id)
+            ->orderBy('fio')
+            ->get();
+        
+            return view('home')->with(['zapr' => $zapros]);
+        }
+        if(Auth::user()->status=='student'){
+        
+            return view('student');
+        }
+
+
+
+
+
     }
  
 
