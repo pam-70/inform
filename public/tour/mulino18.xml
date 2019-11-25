@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- for xml compliance -->
+<krpano version="1.0.8.14">
+    <!-- actions to perform while loading -->
+    <events onxmlcomplete="onxmlcompleteaction();"/>
+    <action name="onxmlcompleteaction">
+		unselectmapspotsbutpassed();
+		selectmapspot(mapspot22,149);
+		firstloadcompleteaction();
+	</action>
+    <events onloadcomplete="onloadcompleteaction();"/>
+    <action name="onloadcompleteaction">
+		if(plugin[data].soundOn==false,stoppanosounds(),playpanosounds());
+	</action>
+    <action name="playpanosounds">
+		playbackgroundsound(%BASEDIR%/mulinodata/sounds/sound0.mp3,0,%1);
+	</action>
+    <action name="stoppanosounds">
+		stopbackgroundsound();
+	</action>
+    <action name="closepanoobjects">
+	</action>
+    <!--************** Панорама *******************************************************************-->
+    <!-- @File="mulino18.xml" @PanoName="20 - Кабинет математики" @FilePath="Z:/_-W-O-R-K__/2015/Виртуальные туры/09.Мулино/Панорамы после сборки/20 - Кабинет математики.jpg" -->
+    <panoview h="29.84" v="-2.92" fov="55.88"/>
+    <!-- view parameters -->
+    <view fisheye="0" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.0" fovmax="90" fov="55.88" hlookat="29.84" vlookat="-2.92"/>
+    <autorotate horizon="-2.92" tofov="55.88" waittime="3" speed="1"/>
+    <!-- preview image -->
+    <preview url="mulinodata/mulino18/preview.jpg" type="CUBESTRIP" striporder="FRBLUD" details="16"/>
+    <!-- the pano itself -->
+    <image type="CUBE" multires="true" tilesize="796" baseindex="0">
+        <level tiledimagewidth="3184" tiledimageheight="3184">
+            <left url="mulinodata/mulino18/3/2/%v_%u.jpg"/>
+            <front url="mulinodata/mulino18/0/2/%v_%u.jpg"/>
+            <right url="mulinodata/mulino18/1/2/%v_%u.jpg"/>
+            <back url="mulinodata/mulino18/2/2/%v_%u.jpg"/>
+            <up url="mulinodata/mulino18/4/2/%v_%u.jpg"/>
+            <down url="mulinodata/mulino18/5/2/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="1592" tiledimageheight="1592">
+            <left url="mulinodata/mulino18/3/1/%v_%u.jpg"/>
+            <front url="mulinodata/mulino18/0/1/%v_%u.jpg"/>
+            <right url="mulinodata/mulino18/1/1/%v_%u.jpg"/>
+            <back url="mulinodata/mulino18/2/1/%v_%u.jpg"/>
+            <up url="mulinodata/mulino18/4/1/%v_%u.jpg"/>
+            <down url="mulinodata/mulino18/5/1/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="796" tiledimageheight="796">
+            <left url="mulinodata/mulino18/3/0/%v_%u.jpg"/>
+            <front url="mulinodata/mulino18/0/0/%v_%u.jpg"/>
+            <right url="mulinodata/mulino18/1/0/%v_%u.jpg"/>
+            <back url="mulinodata/mulino18/2/0/%v_%u.jpg"/>
+            <up url="mulinodata/mulino18/4/0/%v_%u.jpg"/>
+            <down url="mulinodata/mulino18/5/0/%v_%u.jpg"/>
+        </level>
+    </image>
+    <!--************** Hotspots and lensflares ****************************************************-->
+    <hotspot name="spot43" onclick="mainloadpano(mulino29.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot43,0.1);" onhover="showtext(рекреация 3 этаж);" ath="79.7802" atv="-0.220049"/>
+    <action name="hidepanospotsaction">
+		set(hotspot[spot43].visible, false);
+	</action>
+    <action name="showpanospotsaction">
+		set(hotspot[spot43].visible, true);
+	</action>
+    <!-- close all hotspots -->
+</krpano>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<krpano version="1.0.8">
+	<image type="CUBESTRIP">
+		<cubestrip url="pano.jpg" />
+	</image>
+</krpano>
+

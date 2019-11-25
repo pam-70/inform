@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- for xml compliance -->
+<krpano version="1.0.8.14">
+    <!-- actions to perform while loading -->
+    <events onxmlcomplete="onxmlcompleteaction();"/>
+    <action name="onxmlcompleteaction">
+		unselectmapspotsbutpassed();
+		selectmapspot(mapspot24,198);
+		firstloadcompleteaction();
+	</action>
+    <events onloadcomplete="onloadcompleteaction();"/>
+    <action name="onloadcompleteaction">
+		if(plugin[data].soundOn==false,stoppanosounds(),playpanosounds());
+	</action>
+    <action name="playpanosounds">
+		playbackgroundsound(%BASEDIR%/mulinodata/sounds/sound0.mp3,0,%1);
+	</action>
+    <action name="stoppanosounds">
+		stopbackgroundsound();
+	</action>
+    <action name="closepanoobjects">
+	</action>
+    <!--************** Панорама *******************************************************************-->
+    <!-- @File="mulino20.xml" @PanoName="22 - Кабинет психологической разгрузки" @FilePath="Z:/_-W-O-R-K__/2015/Виртуальные туры/09.Мулино/Панорамы после сборки/22 - Кабинет психологической разгрузки.jpg" -->
+    <panoview h="-107.47" v="-1.93" fov="46.18"/>
+    <!-- view parameters -->
+    <view fisheye="0" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-81.395" vlookatmax="89.775" maxpixelzoom="1.0" fovmax="90" fov="46.18" hlookat="-107.47" vlookat="-1.93"/>
+    <autorotate horizon="-1.93" tofov="46.18" waittime="3" speed="-1"/>
+    <!-- preview image -->
+    <preview url="mulinodata/mulino20/preview.jpg"/>
+    <!-- the pano itself -->
+    <image type="SPHERE" hfov="360" vfov="171.17" voffset="4.19" multires="true" tilesize="595" baseindex="0">
+        <level tiledimagewidth="10000" tiledimageheight="4754">
+            <sphere url="mulinodata/mulino20/3/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="5000" tiledimageheight="2377">
+            <sphere url="mulinodata/mulino20/2/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="2500" tiledimageheight="1188">
+            <sphere url="mulinodata/mulino20/1/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="1250" tiledimageheight="594">
+            <sphere url="mulinodata/mulino20/0/%v_%u.jpg"/>
+        </level>
+    </image>
+    <!--************** Hotspots and lensflares ****************************************************-->
+    <hotspot name="spot45" onclick="mainloadpano(mulino29.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot45,0.1);" onhover="showtext(рекреация 3 этаж);" ath="48.2927" atv="0.632677"/>
+    <action name="hidepanospotsaction">
+		set(hotspot[spot45].visible, false);
+	</action>
+    <action name="showpanospotsaction">
+		set(hotspot[spot45].visible, true);
+	</action>
+    <!-- close all hotspots -->
+</krpano>

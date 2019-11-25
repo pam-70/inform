@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- for xml compliance -->
+<krpano version="1.0.8.14">
+    <!-- actions to perform while loading -->
+    <events onxmlcomplete="onxmlcompleteaction();"/>
+    <action name="onxmlcompleteaction">
+		unselectmapspotsbutpassed();
+		if(autorotate.enabled==false,set(plugin[autorotationOFF].visible,false); set(plugin[autorotationON].visible,true);,set(plugin[autorotationOFF].visible,true); set(plugin[autorotationON].visible,false););
+		selectmapspot(mapspot0,98);
+		firstloadcompleteaction();
+	</action>
+    <events onloadcomplete="onloadcompleteaction();"/>
+    <action name="onloadcompleteaction">
+		if(plugin[data].soundOn==false,stoppanosounds(),playpanosounds());
+	</action>
+    <action name="playpanosounds">
+		playbackgroundsound(%BASEDIR%/mulinodata/sounds/sound0.mp3,0,%1);
+	</action>
+    <action name="stoppanosounds">
+		stopbackgroundsound();
+	</action>
+    <action name="closepanoobjects">
+	</action>
+    <!--************** Панорама *******************************************************************-->
+    <!-- @File="mulino30.xml" @PanoName="01 - Главный вход!" @FilePath="Z:/_-W-O-R-K__/2015/Виртуальные туры/09.Мулино/Панорамы после сборки/01 - Главный вход!.jpg" -->
+    <panoview h="81.07" v="-5.54" fov="50.8"/>
+    <!-- view parameters -->
+    <view fisheye="0" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.0" fovmax="90" fov="50.8" hlookat="81.07" vlookat="-5.54"/>
+    <action name="tweennormalview">
+		tween(view.hlookat, 81.07, 3, easeInOutQuad);
+		tween(view.vlookat, -5.54, 3, easeInOutQuad);
+		tween(view.fov    , 50.8, 3, easeInOutQuad );
+		tween(view.maxpixelzoom,1.0, 3, easeInOutQuad );
+		tween(view.fisheye, 0.0, 3, easeInOutQuad, WAIT);
+		set(display.flash10, on);
+		set(view.limitview , range);
+		set(view.vlookatmin, -90);
+		set(view.vlookatmax, 90);
+		set(view.hlookatmin, -180);
+		set(view.hlookatmax, 180);
+		set(view.maxpixelzoom, 1.0);
+		set(view.fovmax    , 90);
+	</action>
+    <autorotate horizon="-5.54" tofov="50.8" waittime="3" speed="1"/>
+    <!-- preview image -->
+    <preview url="mulinodata/mulino30/preview.jpg" type="CUBESTRIP" striporder="FRBLUD" details="16"/>
+    <!-- the pano itself -->
+    <image type="CUBE" multires="true" tilesize="796" baseindex="0">
+        <level tiledimagewidth="3184" tiledimageheight="3184">
+            <left url="mulinodata/mulino30/3/2/%v_%u.jpg"/>
+            <front url="mulinodata/mulino30/0/2/%v_%u.jpg"/>
+            <right url="mulinodata/mulino30/1/2/%v_%u.jpg"/>
+            <back url="mulinodata/mulino30/2/2/%v_%u.jpg"/>
+            <up url="mulinodata/mulino30/4/2/%v_%u.jpg"/>
+            <down url="mulinodata/mulino30/5/2/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="1592" tiledimageheight="1592">
+            <left url="mulinodata/mulino30/3/1/%v_%u.jpg"/>
+            <front url="mulinodata/mulino30/0/1/%v_%u.jpg"/>
+            <right url="mulinodata/mulino30/1/1/%v_%u.jpg"/>
+            <back url="mulinodata/mulino30/2/1/%v_%u.jpg"/>
+            <up url="mulinodata/mulino30/4/1/%v_%u.jpg"/>
+            <down url="mulinodata/mulino30/5/1/%v_%u.jpg"/>
+        </level>
+        <level tiledimagewidth="796" tiledimageheight="796">
+            <left url="mulinodata/mulino30/3/0/%v_%u.jpg"/>
+            <front url="mulinodata/mulino30/0/0/%v_%u.jpg"/>
+            <right url="mulinodata/mulino30/1/0/%v_%u.jpg"/>
+            <back url="mulinodata/mulino30/2/0/%v_%u.jpg"/>
+            <up url="mulinodata/mulino30/4/0/%v_%u.jpg"/>
+            <down url="mulinodata/mulino30/5/0/%v_%u.jpg"/>
+        </level>
+    </image>
+    <!--************** Hotspots and lensflares ****************************************************-->
+    <hotspot name="spot66" onclick="mainloadpano(mulino1.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot66,0.1);" onhover="showtext(рекреация 1 этаж);" ath="66.8177" atv="-3.47222"/>
+    <hotspot name="spot67" onclick="mainloadpano(mulino6.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot67,0.1);" onhover="showtext(рекреация начальной школы);" ath="59.7697" atv="-3.47222"/>
+    <hotspot name="spot68" onclick="mainloadpano(mulino13.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot68,0.1);" onhover="showtext(актовый зал);" ath="140.2" atv="-20"/>
+    <hotspot name="spot69" onclick="mainloadpano(mulino29.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot69,0.1);" onhover="showtext(рекреация 3 этаж);" ath="-44.7438" atv="-28.5115"/>
+    <hotspot name="spot70" onclick="mainloadpano(mulino0.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot70,0.1);" onhover="showtext(вход 2);" ath="-152.334" atv="1.5458"/>
+    <hotspot name="spot71" onclick="mainloadpano(mulino7.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot71,0.1);" onhover="showtext(2 этаж);" ath="54.6249" atv="-13.6241"/>
+    <hotspot name="spot72" onclick="mainloadpano(mulino29.xml);" url="mulinodata/graphics/spots/spot1.png" crop="0|0|64|64" frame="0" lastframe="19" frameheight="64" framewidth="64" onloaded="set(stopSequence,false);animate(spot72,0.1);" onhover="showtext(3 этаж);" ath="55.028" atv="-21.525"/>
+    <action name="hidepanospotsaction">
+		set(hotspot[spot66].visible, false);
+		set(hotspot[spot67].visible, false);
+		set(hotspot[spot68].visible, false);
+		set(hotspot[spot69].visible, false);
+		set(hotspot[spot70].visible, false);
+		set(hotspot[spot71].visible, false);
+		set(hotspot[spot72].visible, false);
+	</action>
+    <action name="showpanospotsaction">
+		set(hotspot[spot66].visible, true);
+		set(hotspot[spot67].visible, true);
+		set(hotspot[spot68].visible, true);
+		set(hotspot[spot69].visible, true);
+		set(hotspot[spot70].visible, true);
+		set(hotspot[spot71].visible, true);
+		set(hotspot[spot72].visible, true);
+	</action>
+    <!-- close all hotspots -->
+</krpano>

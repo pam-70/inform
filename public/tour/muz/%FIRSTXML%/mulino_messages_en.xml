@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="en_project_title"><![CDATA[New Project]]></data>
+
+
+
+  <data name="en_pano9_title"><![CDATA[Зал воинской Славы. Точка 1]]></data>
+  <data name="en_spotpoint30_tooltip"><![CDATA[Зал народного подвига]]></data>
+  <data name="en_spotpoint31_tooltip"><![CDATA[Зал истории гимназии]]></data>
+  <data name="en_spotpoint32_tooltip"><![CDATA[Зал воинской Славы. Точка 2]]></data>
+
+
+  <data name="en_pano10_title"><![CDATA[Зал народного подвига]]></data>
+  <data name="en_spotpoint77_tooltip"><![CDATA[Зал воинской Славы. Точка 1]]></data>
+  <data name="en_spotpoint78_tooltip"><![CDATA[Зал истории гимназии]]></data>
+
+
+  <data name="en_pano11_title"><![CDATA[Зал воинской Славы. Точка 2]]></data>
+  <data name="en_spotpoint33_tooltip"><![CDATA[Зал воинской Славы. Точка 1]]></data>
+  <data name="en_spotpoint34_tooltip"><![CDATA[Зал народного подвига]]></data>
+  <data name="en_spotpoint35_tooltip"><![CDATA[Зал истории гимназии]]></data>
+
+
+  <data name="en_pano12_title"><![CDATA[Зал истории гимназии]]></data>
+  <data name="en_spotpoint75_tooltip"><![CDATA[Зал воинской Славы. Точка 2]]></data>
+  <data name="en_spotpoint76_tooltip"><![CDATA[Зал народного подвига]]></data>
+
+
+
+
+
+
+  <data name="en_logowebsiteurl"><![CDATA[http://mulino58.ru]]></data>
+  <data name="en_logotooltipText"><![CDATA[перейти на сайт]]></data>
+  <data name="en_logo1websiteurl"><![CDATA[]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
