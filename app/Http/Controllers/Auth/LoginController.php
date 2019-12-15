@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-   // echo('9999');
+   
     protected $redirectTo = '/home';
 
     /**
@@ -41,7 +41,7 @@ class LoginController extends Controller
     /*
     public function username()
     {
-        return 'name';
+        return 'home';
     }
     */
 }

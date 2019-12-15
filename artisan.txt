@@ -42,3 +42,9 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/pam-70/inform.git
 git push -u origin master
+
+устанавливаем vue 
+npm install vue vue-router vuetify
+npm install && npm install vue-router
+компелируем файл
+npm run watch

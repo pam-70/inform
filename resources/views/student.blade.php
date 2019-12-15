@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">Добро пожаловать
                 <div class="card-header">{{Auth::user()->fio}}   
                     @if (!empty(Auth::user()->rezult))
@@ -35,12 +35,17 @@
                         @csrf              
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-0">
-                            
-                            <button type="submit" class="btn btn-primary">
-                                    {{ __('Выполнить задание') }}
+                            @if (empty(Auth::user()->rezult))          
+              
+                                <button type="submit" class="btn btn-primary">
+                                        {{ __('Выполнить задание') }}
                                 </button>
-                           
+                            @endif 
                             </div>
+                            <div class="card-body" id='app'></div>
+
+
+
                         </div>
                     </form>
                     </div>

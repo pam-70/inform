@@ -12,8 +12,22 @@
         <!-- Styles -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/app.css">
+        
+       
     </head>
+    
     <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/js/app.js"></script> 
+   
+    
+    
+    <div id="app">
+    
+    <example-component> </example-component>
+                 </div>
+    
+    
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -32,6 +46,8 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+
+                    
                 </div>
 
                 <div class="links">
@@ -46,5 +62,7 @@
                 </div>
             </div>
         </div>
+
     </body>
+    
 </html>

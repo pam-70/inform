@@ -9,19 +9,19 @@ use App\User;
 
 class AddstudentController extends Controller
 {// не закончил валидацию
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function addstudent(Request $request)
     {
+        
         // проверка валидации
         $validaterequest = $request->validate([
             'fio' => 'string|max:155',
             'klass' => 'required',
         ]);
-
-    
-
-
 
     //dd($request);
     //проверка валидации данных затем записать их потом отбразить 
@@ -51,8 +51,8 @@ function rand9(){
     }
 
    
-        // $passs=Hash::make('password', ['rounds' => 12]);
-        //$passs=Hash::make(12345678);
+    // $passs=Hash::make('password', ['rounds' => 12]);
+    //$passs=Hash::make(12345678);
         $rn=rand9();// создаем логин и пароль
   // echo(Auth::user()->theme);
 
@@ -70,17 +70,6 @@ function rand9(){
         'status'=>'student',
         'password_str'=>$rn['passw'],
     ]);
-
-
-
-
-
-
-
-
-
-
-
 
     //$date = DateTime::createFromFormat('d.m.Y \| H:i', '07.09.2019 | 00:00');
 
@@ -103,19 +92,25 @@ function rand9(){
 
 
        // echo(Auth::id());
+      // $all_stud=User::where('rukov_id',Auth::user()->id)// запрос на ученикоа у препода
+      //  ->orderBy('klass')
+      // ->get();
+       // dd($all_stud);
        $zapros=User::where('rukov_id',Auth::user()->id)
-        ->orderBy('klass')
+       ->orderBy('fio','desc')
        ->get();
-        dd($zapros);
-        return view('home');
+   
+       return view('home')->with(['zapr' => $zapros]);
+        //return view('home');
         
       
     }
     public function hom()
     {
-        if(Auth::user()->status=='rokov'){
+        if(Auth::user()->status=='rukov'){
             $zapros=User::where('rukov_id',Auth::user()->id)
-            ->orderBy('fio')
+            ->orderBy('fio','desc')
+            //->orderBy('klass','desc')
             ->get();
         
             return view('home')->with(['zapr' => $zapros]);
@@ -133,9 +128,12 @@ function rand9(){
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function log()
     {
         //
+        //route('logout');
+        Auth::guard('web')->logout();
+        return view('welcome');
     }
 
     /**

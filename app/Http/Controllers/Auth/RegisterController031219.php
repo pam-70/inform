@@ -48,19 +48,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {//'fio','schoola','klass','status','password_str',
+       // dd($data);
+
         $messages=[
             'name.max'=>'Максимальное количество знаков :max',
             'email.unique'=>'Пользователь с таким email уже зарегистрирован :users',
 
         ];
-
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:2'],
+        $validator=Validator::make($data, [
+            'name' => ['required', 'string', 'max:5'],
             'fio' => ['required', 'string', 'max:255'],
             'schoola' => ['required', 'string', 'max:155'],
             'email' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ],$messages);
+        ],$messages)->validate();
     }
 
     /**
@@ -71,6 +72,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        dd($data);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
